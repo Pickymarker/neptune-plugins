@@ -1,0 +1,1 @@
+import{intercept as s}from"@neptune";function a(n){return n.replace(/([a-z0-9])([A-Z])/g,"$1_$2").toUpperCase()}var A=window.neptune.actions,c=(n,r)=>{let e=[];for(let t in A)for(let p in window.neptune.actions[t]){let o=`${t}/${a(p)}`;n.test(o)&&e.push(s(o,i=>r(i[1],i[0])))}return()=>e.forEach(t=>t())};var m=c(/.*/,console.log);export{m as onUnload};
